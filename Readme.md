@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Anton Shafner](https://up.htmlacademy.ru/react/2/user/271813).
-* Наставник: `Неизвестно`.
+* Наставник: [Юрий Татаринцев](https://htmlacademy.ru/profile/id235196).
 
 ---
 
