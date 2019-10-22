@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const MainScreen = () => {
+const MainScreen = (props) => {
+  const {arrDescriptions} = props;
   return <div className="page page--gray page--main">
     <header className="header">
       <div className="container">
@@ -112,7 +114,7 @@ const MainScreen = () => {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Beautiful &amp; luxurious apartment at great location</a>
+                    <a href="#">{arrDescriptions[0]}</a>
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>
@@ -144,7 +146,7 @@ const MainScreen = () => {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Wood and stone place</a>
+                    <a href="#">{arrDescriptions[1]}</a>
                   </h2>
                   <p className="place-card__type">Private room</p>
                 </div>
@@ -176,7 +178,7 @@ const MainScreen = () => {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Canal View Prinsengracht</a>
+                    <a href="#">{arrDescriptions[2]}</a>
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>
@@ -211,7 +213,7 @@ const MainScreen = () => {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Nice, cozy, warm big bed apartment</a>
+                    <a href="#">{arrDescriptions[3]}</a>
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>
@@ -243,7 +245,7 @@ const MainScreen = () => {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Wood and stone place</a>
+                    <a href="#">{arrDescriptions[1]}</a>
                   </h2>
                   <p className="place-card__type">Private room</p>
                 </div>
@@ -257,6 +259,10 @@ const MainScreen = () => {
       </div>
     </main>
   </div>;
+};
+
+MainScreen.propTypes = {
+  arrDescriptions: PropTypes.oneOf([`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Canal View Prinsengracht`, `Nice, cozy, warm big bed apartment`])
 };
 
 export default MainScreen;
