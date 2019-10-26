@@ -90,6 +90,7 @@ const MainScreen = (props) => {
                 <Card
                   title={item}
                   key={key}
+                  onClick={() => {}}
                 />))}
             </div>
           </section>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({title}) => {
+const Card = ({title, onClick}) => {
   return <article className="cities__place-card place-card">
     <div className="place-card__mark">
       <span>Premium</span>
@@ -31,7 +31,7 @@ const Card = ({title}) => {
         </div>
       </div>
       <h2 className="place-card__name">
-        <a href="#">{title}</a>
+        <a onClick={onClick} href="#">{title}</a>
       </h2>
       <p className="place-card__type">Apartment</p>
     </div>
@@ -40,6 +40,7 @@ const Card = ({title}) => {
 
 Card.propTypes = {
   title: PropTypes.oneOf([`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Canal View Prinsengracht`, `Nice, cozy, warm big bed apartment`]).isRequired,
+  onClick: PropTypes.func
 };
 
 export default Card;
