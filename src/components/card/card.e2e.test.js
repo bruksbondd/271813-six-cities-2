@@ -5,13 +5,17 @@ import Card from './card.jsx';
 
 Enzyme.configure({adapter: new Adapter()});
 
-it(`check the onClick callback`, () => {
-  const clickHandler = jest.fn();
+it(`check the mouse hover`, () => {
+  const handlerMouseEnter = jest.fn();
   const card = shallow(<Card
-    title={`Beautiful & luxurious apartment at great location`}
-    onClick={clickHandler}
+    title={`Wood and stone place`}
+    id={100}
+    img={`img/apartment-01.jpg`}
+    isPremium={true}
+    cost={1000}
+    onMouseEnter={handlerMouseEnter}
   />);
-  const titleLink = card.find(`.place-card__name a`);
-  titleLink.simulate(`click`);
-  expect(clickHandler).toHaveBeenCalledTimes(1);
+  const article = card.find(`.place-card`);
+  article.simulate(`mouseenter`);
+  expect(handlerMouseEnter).toHaveBeenCalledWith(100);
 });

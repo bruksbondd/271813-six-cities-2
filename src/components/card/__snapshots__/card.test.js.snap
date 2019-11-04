@@ -3,6 +3,8 @@
 exports[`render correctly card 1`] = `
 <article
   className="cities__place-card place-card"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <div
     className="place-card__mark"
@@ -38,7 +40,8 @@ exports[`render correctly card 1`] = `
         <b
           className="place-card__price-value"
         >
-          €120
+          €
+          1000
         </b>
         <span
           className="place-card__price-text"
@@ -92,7 +95,7 @@ exports[`render correctly card 1`] = `
       <a
         href="#"
       >
-        Beautiful & luxurious apartment at great location
+        some apartment
       </a>
     </h2>
     <p

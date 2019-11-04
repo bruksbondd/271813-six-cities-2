@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './app.jsx';
+import ListOffers from "./list-offers.jsx";
 
-it(`render correctly App`, () => {
-  const app = renderer
-    .create(<App
+it(`render correctly card`, () => {
+  const card = renderer
+    .create(<ListOffers
       arrOffers={[
         {
           id: 1,
@@ -37,5 +37,5 @@ it(`render correctly App`, () => {
       ]}
     />)
     .toJSON();
-  expect(app).toMatchSnapshot();
+  expect(card).toMatchSnapshot();
 });

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../card/card.jsx';
+import ListOffers from '../list-offers/list-offers.jsx';
 
 const MainScreen = (props) => {
-  const {arrDescriptions} = props;
+  const {arrOffers} = props;
   return <div className="page page--gray page--main">
     <header className="header">
       <div className="container">
@@ -85,14 +85,9 @@ const MainScreen = (props) => {
                 <li className="places__option" tabIndex="0">Top rated first</li>
               </ul>
             </form>
-            <div className="cities__places-list places__list tabs__content">
-              {arrDescriptions.map((item, key) => (
-                <Card
-                  title={item}
-                  key={key}
-                  onClick={() => {}}
-                />))}
-            </div>
+            <ListOffers
+              arrOffers={arrOffers}
+            />
           </section>
           <div className="cities__right-section">
             <section className="cities__map map"></section>
@@ -104,7 +99,7 @@ const MainScreen = (props) => {
 };
 
 MainScreen.propTypes = {
-  arrDescriptions: PropTypes.arrayOf(PropTypes.string).isRequired
+  arrOffers: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default MainScreen;

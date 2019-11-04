@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MainScreen from '../main-screen/main-screen.jsx';
 
-const App = ({arrDescriptions}) => {
+const App = ({arrOffers}) => {
   return <MainScreen
-    arrDescriptions={arrDescriptions}
+    arrOffers={arrOffers}
   />;
 };
 
 App.propTypes = {
-  arrDescriptions: PropTypes.arrayOf(PropTypes.string).isRequired
+  arrOffers: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default App;
