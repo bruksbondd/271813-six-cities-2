@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListOffers from '../list-offers/list-offers.jsx';
+import Map from '../map/map.jsx';
 
 const MainScreen = (props) => {
   const {arrOffers} = props;
@@ -90,7 +91,11 @@ const MainScreen = (props) => {
             />
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map"></section>
+            <section className="cities__map map">
+              <Map
+                arrOffers={arrOffers}
+              />
+            </section>
           </div>
         </div>
       </div>
