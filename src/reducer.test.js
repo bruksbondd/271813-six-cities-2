@@ -1,4 +1,4 @@
-import reducer from './reducer.js';
+import {reducer} from './reducer.js';
 import {offers, CITIES} from "./mocks/offers.js";
 
 describe(`business logic is correct`, () => {

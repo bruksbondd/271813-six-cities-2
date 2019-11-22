@@ -4,7 +4,7 @@ import {ListCities} from './list-cities.jsx';
 import {CITIES} from '../../mocks/offers.js';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import reducer from '../../reducer.js';
+import {reducer} from '../../reducer.js';
 
 it(`render correctly list of city`, () => {
   const store = createStore(reducer);

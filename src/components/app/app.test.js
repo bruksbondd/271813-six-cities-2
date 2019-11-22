@@ -4,7 +4,7 @@ import App from './app.jsx';
 import {CITIES, offers} from '../../mocks/offers.js';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import reducer from '../../reducer.js';
+import {reducer} from '../../reducer.js';
 
 it(`render correctly App`, () => {
   const store = createStore(reducer);
