@@ -4,13 +4,14 @@ import ListOffers from '../list-offers/list-offers.jsx';
 import Map from '../map/map.jsx';
 import City from '../city/city.jsx';
 import {connect} from 'react-redux';
+import {ActionCreator} from "../../reducer.js";
 
 class ListCities extends React.PureComponent {
   constructor(props) {
     super(props);
   }
   render() {
-    const {shownOffers, cities, selectedCity, onClick} = this.props;
+    const {shownOffers, cities, selectedCity, changeCity} = this.props;
     return <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
       <div className="tabs">
@@ -21,7 +22,7 @@ class ListCities extends React.PureComponent {
                 key={key}
                 name={item}
                 selectedCity={selectedCity}
-                onClick={onClick}
+                onClick={() => changeCity(item)}
               />
             ))}
           </ul>
@@ -71,10 +72,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (evt) => {
-      const selectedCity = evt.target.textContent;
-      dispatch({type: `CITY_CHANGE`, city: selectedCity});
-      dispatch({type: `GET_OFFERS`, city: selectedCity});
+    changeCity: (city) => {
+      dispatch(ActionCreator.changeCity(city));
+      dispatch(ActionCreator.getOffers(city));
     }
   };
 };
@@ -85,7 +85,7 @@ ListCities.propTypes = {
   shownOffers: PropTypes.arrayOf(PropTypes.object).isRequired,
   cities: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedCity: PropTypes.string.isRequired,
-  onClick: PropTypes.func
+  changeCity: PropTypes.func
 };
 
 export {connectedComponent as ListCities};

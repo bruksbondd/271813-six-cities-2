@@ -6,6 +6,17 @@ const initialState = {
   allOffers: offers
 };
 
+const ActionCreator = {
+  changeCity: (city) => ({
+    type: `CITY_CHANGE`,
+    city
+  }),
+  getOffers: (city) => ({
+    type: `GET_OFFERS`,
+    city
+  })
+};
+
 const reducer = (state = initialState, action) => {
   if (action.type === `CITY_CHANGE`) {
     return Object.assign({}, state, {
@@ -19,4 +30,4 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-export default reducer;
+export {reducer, ActionCreator};

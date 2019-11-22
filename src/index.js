@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app.jsx';
 import {offers, CITIES} from './mocks/offers.js';
-import reducer from './reducer.js';
+import {reducer} from './reducer.js';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
