@@ -1,41 +1,21 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import App from './app.jsx';
+import {CITIES, offers} from '../../mocks/offers.js';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import {reducer} from '../../reducer.js';
 
 it(`render correctly App`, () => {
+  const store = createStore(reducer);
   const app = renderer
-    .create(<App
-      arrOffers={[
-        {
-          id: 1,
-          title: `Beautiful & luxurious apartment at great location`,
-          img: `img/apartment-01.jpg`,
-          isPremium: true,
-          cost: 200
-        },
-        {
-          id: 2,
-          title: `Wood and stone place`,
-          img: `img/apartment-02.jpg`,
-          isPremium: false,
-          cost: 130
-        },
-        {
-          id: 3,
-          title: `Canal View Prinsengracht`,
-          img: `img/apartment-03.jpg`,
-          isPremium: false,
-          cost: 150
-        },
-        {
-          id: 4,
-          title: `Nice, cozy, warm big bed apartment`,
-          img: `img/room.jpg`,
-          isPremium: true,
-          cost: 210
-        }
-      ]}
-    />)
+    .create(
+        <Provider store={store}>
+          <App
+            arrOffers={offers}
+            cities={CITIES}
+          />
+        </Provider>)
     .toJSON();
   expect(app).toMatchSnapshot();
 });
