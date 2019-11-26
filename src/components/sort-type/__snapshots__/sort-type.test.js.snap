@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly sort type 1`] = `
+<span
+  className="places__sorting-type"
+  onClick={[Function]}
+  tabIndex="0"
+>
+  Popular
+  <svg
+    className="places__sorting-arrow"
+    height="4"
+    width="7"
+  >
+    <use
+      xlinkHref="#icon-arrow-select"
+    />
+  </svg>
+</span>
+`;

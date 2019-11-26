@@ -19,6 +19,7 @@ it(`render correctly list of city`, () => {
               img: `img/apartment-03.jpg`,
               isPremium: false,
               cost: 150,
+              rating: 93,
               coords: [52.3909553943508, 4.85309666406198]
             },
             {
@@ -28,6 +29,7 @@ it(`render correctly list of city`, () => {
               img: `img/apartment-01.jpg`,
               isPremium: true,
               cost: 200,
+              rating: 68,
               coords: [52.369553943508, 4.85309666406198]
             }]}
             cities={CITIES}

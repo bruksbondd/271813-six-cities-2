@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({title, img, isPremium, cost, onMouseEnter, onMouseLeave, id}) => {
+const Card = ({title, img, isPremium, cost, onMouseEnter, rating, onMouseLeave, id}) => {
   return <article onMouseEnter={() => onMouseEnter(id)} onMouseLeave={onMouseLeave} className="cities__place-card place-card">
     {isPremium ? <div className="place-card__mark">
       <span>Premium</span>
@@ -26,7 +26,7 @@ const Card = ({title, img, isPremium, cost, onMouseEnter, onMouseLeave, id}) => 
       </div>
       <div className="place-card__rating rating">
         <div className="place-card__stars rating__stars">
-          <span style={{width: `93%`}}></span>
+          <span style={{width: `${rating}%`}}></span>
           <span className="visually-hidden">Rating</span>
         </div>
       </div>
@@ -45,7 +45,8 @@ Card.propTypes = {
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
   isPremium: PropTypes.bool,
-  cost: PropTypes.number
+  cost: PropTypes.number,
+  rating: PropTypes.number
 };
 
 export default Card;

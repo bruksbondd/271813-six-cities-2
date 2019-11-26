@@ -1,12 +1,15 @@
 import {reducer} from './reducer.js';
-import {offers, CITIES} from "./mocks/offers.js";
+import {offers, CITIES, TYPE_SORTING} from "./mocks/offers.js";
 
 describe(`business logic is correct`, () => {
   it(`reducer without parameters should return initial state`, () => {
     expect(reducer(undefined, {})).toEqual({
       city: CITIES[0],
       shownOffers: offers.filter((item) => item.city === CITIES[0]),
-      allOffers: offers
+      allOffers: offers,
+      isShownSort: false,
+      typeSorting: TYPE_SORTING.popular,
+      idSelectedCard: -1
     });
   });
 
@@ -67,6 +70,7 @@ describe(`business logic is correct`, () => {
         img: `img/room.jpg`,
         isPremium: true,
         cost: 210,
+        rating: 54,
         coords: [52.3909553943508, 4.85309666406198]
       },
       {
@@ -75,7 +79,9 @@ describe(`business logic is correct`, () => {
         title: `Canal View Prinsengracht`,
         img: `img/apartment-03.jpg`,
         isPremium: false,
-        cost: 150
+        cost: 150,
+        rating: 97,
+        coords: [52.369553943508, 4.85309666406198]
       }],
       allOffers: offers
     }, {
@@ -90,6 +96,7 @@ describe(`business logic is correct`, () => {
         img: `img/apartment-01.jpg`,
         isPremium: true,
         cost: 200,
+        rating: 63,
         coords: [52.3909553943508, 4.85309666406198]
       },
       {
@@ -99,9 +106,11 @@ describe(`business logic is correct`, () => {
         img: `img/apartment-03.jpg`,
         isPremium: false,
         cost: 150,
+        rating: 35,
         coords: [52.369553943508, 4.85309666406198]
       }],
-      allOffers: offers
+      allOffers: offers,
+      typeSorting: `Popular`
     });
   });
 });
