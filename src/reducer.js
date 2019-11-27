@@ -43,6 +43,9 @@ const ActionCreator = {
   sortByRating: () => ({
     type: `SORT_BY_RATE`
   }),
+  sortByPopular: () => ({
+    type: `SORT_BY_POPULAR`
+  }),
   changeIdSelectedCard: (id) => ({
     type: `CHANGE_ID`,
     id
@@ -84,6 +87,11 @@ const reducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       shownOffers: sortByRating(state.shownOffers),
       typeSorting: TYPE_SORTING.rating
+    });
+  } else if (action.type === `SORT_BY_POPULAR`) {
+    return Object.assign({}, state, {
+      shownOffers: state.allOffers.filter((item) => item.city === state.city),
+      typeSorting: TYPE_SORTING.popular
     });
   } else if (action.type === `CHANGE_ID`) {
     return Object.assign({}, state, {

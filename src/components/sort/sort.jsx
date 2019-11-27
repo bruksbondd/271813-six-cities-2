@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
     sortButton: () => dispatch(ActionCreator.changeVisibleSort()),
     sortByPriceToLow: () => dispatch(ActionCreator.sortByPriceToLow()),
     sortByPriceToTop: () => dispatch(ActionCreator.sortByPriceToTop()),
-    sortByPopular: () => dispatch(ActionCreator.getOffers()),
+    sortByPopular: () => dispatch(ActionCreator.sortByPopular()),
     sortByRating: () => dispatch(ActionCreator.sortByRating()),
   };
 };
