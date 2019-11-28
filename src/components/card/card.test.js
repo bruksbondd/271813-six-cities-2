@@ -10,6 +10,7 @@ it(`render correctly card`, () => {
       img={`img/apartment-01.jpg`}
       isPremium={true}
       cost={1000}
+      rating={93}
       onMouseEnter={() => {}}
       onMouseLeave={() => {}}
     />)

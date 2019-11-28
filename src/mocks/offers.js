@@ -7,6 +7,13 @@ const CITIES = [
   `Dusseldorf`
 ];
 
+const TYPE_SORTING = {
+  popular: `Popular`,
+  priceToTop: `Price: low to high`,
+  priceToLow: `Price: high to low`,
+  rating: `Top rated first`
+};
+
 const offers = [
   {
     id: 1,
@@ -15,6 +22,7 @@ const offers = [
     img: `img/apartment-01.jpg`,
     isPremium: true,
     cost: 200,
+    rating: 63,
     coords: [52.3909553943508, 4.85309666406198]
   },
   {
@@ -24,6 +32,7 @@ const offers = [
     img: `img/apartment-02.jpg`,
     isPremium: false,
     cost: 130,
+    rating: 78,
     coords: [52.3909553943508, 4.85309666406198]
   },
   {
@@ -33,6 +42,7 @@ const offers = [
     img: `img/apartment-03.jpg`,
     isPremium: false,
     cost: 150,
+    rating: 35,
     coords: [52.369553943508, 4.85309666406198]
   },
   {
@@ -42,6 +52,7 @@ const offers = [
     img: `img/room.jpg`,
     isPremium: true,
     cost: 210,
+    rating: 54,
     coords: [52.3909553943508, 4.85309666406198]
   },
   {
@@ -51,6 +62,7 @@ const offers = [
     img: `img/apartment-01.jpg`,
     isPremium: true,
     cost: 200,
+    rating: 100,
     coords: [52.369553943508, 4.85309666406198]
   },
   {
@@ -59,7 +71,9 @@ const offers = [
     title: `Canal View Prinsengracht`,
     img: `img/apartment-03.jpg`,
     isPremium: false,
-    cost: 150
+    cost: 150,
+    rating: 97,
+    coords: [52.369553943508, 4.85309666406198]
   },
   {
     id: 7,
@@ -68,6 +82,7 @@ const offers = [
     img: `img/room.jpg`,
     isPremium: true,
     cost: 210,
+    rating: 88,
     coords: [52.3909553943508, 4.85309666406198]
   },
   {
@@ -77,6 +92,7 @@ const offers = [
     img: `img/apartment-01.jpg`,
     isPremium: true,
     cost: 200,
+    rating: 75,
     coords: [52.369553943508, 4.85309666406198]
   },
   {
@@ -86,6 +102,7 @@ const offers = [
     img: `img/apartment-02.jpg`,
     isPremium: false,
     cost: 130,
+    rating: 69,
     coords: [52.3909553943508, 4.85309666406198]
   },
   {
@@ -95,6 +112,7 @@ const offers = [
     img: `img/room.jpg`,
     isPremium: true,
     cost: 210,
+    rating: 90,
     coords: [52.369553943508, 4.85309666406198]
   },
   {
@@ -104,7 +122,8 @@ const offers = [
     img: `img/apartment-03.jpg`,
     isPremium: false,
     cost: 150,
-    coords: [52.3909553943508, 4.85309666406198]
+    rating: 71,
+    coords: [52.369553943508, 4.85309666406198]
   },
   {
     id: 12,
@@ -113,7 +132,8 @@ const offers = [
     img: `img/apartment-01.jpg`,
     isPremium: true,
     cost: 200,
-    coords: [52.369553943508, 4.85309666406198]
+    rating: 84,
+    coords: [52.3909553943508, 4.85309666406198]
   },
   {
     id: 13,
@@ -122,6 +142,7 @@ const offers = [
     img: `img/apartment-03.jpg`,
     isPremium: false,
     cost: 150,
+    rating: 55,
     coords: [52.3909553943508, 4.929309666406198]
   },
   {
@@ -131,8 +152,9 @@ const offers = [
     img: `img/apartment-02.jpg`,
     isPremium: false,
     cost: 150,
+    rating: 33,
     coords: [52.3909553943508, 4.929309666406198]
   },
 ];
 
-export {offers, CITIES};
+export {offers, CITIES, TYPE_SORTING};

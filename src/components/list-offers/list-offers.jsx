@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../card/card.jsx';
+import {connect} from 'react-redux';
+import {ActionCreator} from "../../reducer.js";
 
 class ListOffers extends React.PureComponent {
   constructor(props) {
     super(props);
-
-    this.state = {};
-    this.handlerMouseLeave = this.handlerMouseLeave.bind(this);
-  }
-  handlerMouseEnter(id) {
-    this.setState({
-      id
-    });
-  }
-  handlerMouseLeave() {
-    this.setState({
-      id: -1
-    });
   }
   render() {
-    const {arrOffers} = this.props;
+    const {arrOffers, handlerMouseEnter, handlerMouseLeave} = this.props;
     return <div className="cities__places-list places__list tabs__content">
       {arrOffers.map((item, key) => (
         <Card
@@ -30,15 +19,26 @@ class ListOffers extends React.PureComponent {
           img={item.img}
           cost={item.cost}
           isPremium={item.isPremium}
-          onMouseEnter={this.handlerMouseEnter}
-          onMouseLeave={this.handlerMouseLeave}
+          rating={item.rating}
+          onMouseEnter={handlerMouseEnter}
+          onMouseLeave={handlerMouseLeave}
         />))}
     </div>;
   }
 }
 
-ListOffers.propTypes = {
-  arrOffers: PropTypes.arrayOf(PropTypes.object).isRequired
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handlerMouseEnter: (id) => dispatch(ActionCreator.changeIdSelectedCard(id)),
+    handlerMouseLeave: () => dispatch(ActionCreator.resetId())
+  };
 };
 
-export default ListOffers;
+ListOffers.propTypes = {
+  arrOffers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handlerMouseEnter: PropTypes.func,
+  handlerMouseLeave: PropTypes.func
+};
+
+const connectedComponent = connect(null, mapDispatchToProps)(ListOffers);
+export {connectedComponent as ListOffers};
